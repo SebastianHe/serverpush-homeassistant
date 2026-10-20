@@ -1,0 +1,74 @@
+{
+  "title": "ServerPush",
+  "config": {
+    "step": {
+      "user": {
+        "title": "ServerPush",
+        "description": "Enter a ServerPush chat webhook token. This creates four notification entities: Info, Success, Warning and Error. Setup validates the token without sending a test message or consuming quota.",
+        "data": {
+          "token": "Webhook token",
+          "name": "Name (optional)"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure ServerPush",
+        "description": "Leave the token empty to keep the current one. Replacing it preserves entities and automations. The new token is validated before saving without sending a message.",
+        "data": {
+          "token": "New webhook token",
+          "name": "Name"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Replace ServerPush token",
+        "description": "ServerPush rejected the token. Enter a valid webhook token. It is validated before saving; the failed message is not automatically resent.",
+        "data": {
+          "token": "Webhook token"
+        }
+      }
+    },
+    "error": {
+      "invalid_token": "The webhook token is invalid or revoked. Enter the raw token, without a URL.",
+      "duplicate_token": "This token is already configured.",
+      "cannot_connect": "Could not reach ServerPush. Please try again.",
+      "unknown": "ServerPush did not confirm token validation. Please try again later."
+    },
+    "abort": {
+      "already_configured": "This token is already configured.",
+      "reconfigure_successful": "ServerPush was updated.",
+      "reauth_successful": "The token was validated and updated."
+    }
+  },
+  "entity": {
+    "notify": {
+      "info": {
+        "name": "Info"
+      },
+      "success": {
+        "name": "Success"
+      },
+      "warning": {
+        "name": "Warning"
+      },
+      "error": {
+        "name": "Error"
+      }
+    }
+  },
+  "exceptions": {
+    "invalid_auth": {
+      "message": "The webhook token is invalid or revoked. Replace it in the integration."
+    },
+    "invalid_message": {
+      "message": "Messages must contain 1–20,000 characters; titles may contain at most 200 characters."
+    },
+    "rate_limited": {
+      "message": "The request limit or monthly message allowance has been reached. Try again later."
+    },
+    "cannot_connect": {
+      "message": "Could not reach ServerPush. Check the chat before resending: the message may already have arrived."
+    },
+    "send_failed": {
+      "message": "ServerPush did not confirm delivery. Check the chat before resending."
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "domain": "serverpush",
+  "name": "ServerPush",
+  "codeowners": [
+    "@SebastianHe"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/SebastianHe/serverpush-homeassistant",
+  "integration_type": "service",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/SebastianHe/serverpush-homeassistant/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

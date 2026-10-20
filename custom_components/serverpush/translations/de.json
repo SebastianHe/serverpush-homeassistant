@@ -1,0 +1,74 @@
+{
+  "title": "ServerPush",
+  "config": {
+    "step": {
+      "user": {
+        "title": "ServerPush",
+        "description": "Gib das Webhook-Token eines ServerPush-Chats ein. Es entstehen vier Benachrichtigungsentitäten: Info, Erfolg, Warnung und Fehler. Das Token wird bei der Einrichtung geprüft, ohne eine Testnachricht zu senden oder Kontingent zu verbrauchen.",
+        "data": {
+          "token": "Webhook-Token",
+          "name": "Name (optional)"
+        }
+      },
+      "reconfigure": {
+        "title": "ServerPush ändern",
+        "description": "Lass das Token leer, um das bisherige zu behalten. Ein Tokenwechsel erhält die Entitäten und Automationen. Das neue Token wird vor dem Speichern geprüft, ohne eine Nachricht zu senden.",
+        "data": {
+          "token": "Neues Webhook-Token",
+          "name": "Name"
+        }
+      },
+      "reauth_confirm": {
+        "title": "ServerPush-Token ersetzen",
+        "description": "ServerPush hat das Token abgelehnt. Gib ein gültiges Webhook-Token ein. Es wird vor dem Speichern geprüft; die fehlgeschlagene Nachricht wird nicht automatisch erneut gesendet.",
+        "data": {
+          "token": "Webhook-Token"
+        }
+      }
+    },
+    "error": {
+      "invalid_token": "Das Webhook-Token ist ungültig oder widerrufen. Gib nur das Token ein, keine URL.",
+      "duplicate_token": "Dieses Token ist bereits eingerichtet.",
+      "cannot_connect": "ServerPush konnte nicht erreicht werden. Bitte versuche es erneut.",
+      "unknown": "ServerPush konnte die Tokenprüfung nicht bestätigen. Bitte versuche es später erneut."
+    },
+    "abort": {
+      "already_configured": "Dieses Token ist bereits eingerichtet.",
+      "reconfigure_successful": "ServerPush wurde aktualisiert.",
+      "reauth_successful": "Das Token wurde geprüft und aktualisiert."
+    }
+  },
+  "entity": {
+    "notify": {
+      "info": {
+        "name": "Info"
+      },
+      "success": {
+        "name": "Erfolg"
+      },
+      "warning": {
+        "name": "Warnung"
+      },
+      "error": {
+        "name": "Fehler"
+      }
+    }
+  },
+  "exceptions": {
+    "invalid_auth": {
+      "message": "Das Webhook-Token ist ungültig oder widerrufen. Ersetze es in der Integration."
+    },
+    "invalid_message": {
+      "message": "Nachrichten müssen 1–20.000 Zeichen enthalten; Titel dürfen höchstens 200 Zeichen lang sein."
+    },
+    "rate_limited": {
+      "message": "Das Anfragelimit oder das monatliche Nachrichtenkontingent wurde erreicht. Bitte später erneut versuchen."
+    },
+    "cannot_connect": {
+      "message": "ServerPush konnte nicht erreicht werden. Prüfe vor erneutem Versand den Chat: Die Nachricht könnte bereits angekommen sein."
+    },
+    "send_failed": {
+      "message": "ServerPush hat den Versand nicht bestätigt. Prüfe vor erneutem Versand den Chat."
+    }
+  }
+}
