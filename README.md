@@ -4,7 +4,7 @@ English · [Deutsch](README.de.md)
 
 <img src="custom_components/serverpush/brand/icon.png" alt="ServerPush app icon" width="128" height="128">
 
-Send notifications from Home Assistant to your [ServerPush.net](https://serverpush.net) chats – for example, when a window is left open, a backup finishes, or something goes wrong.
+Send notifications from Home Assistant to your [ServerPush.net](https://www.serverpush.net) chats – for example, when a window is left open, a backup finishes, or something goes wrong.
 
 - Four notification entities per webhook token: `info`, `success`, `warning`, and `error`.
 - Send from automations and scripts using the standard `notify.send_message` action, with an optional title and Markdown in the message.
@@ -81,7 +81,7 @@ If a token is rejected while sending, Home Assistant starts a reauthentication f
 - Failed POST requests are **not retried automatically**. A message may already have been accepted when a timeout occurs; check the chat before resending.
 - There is no polling or queue. The entity state records the last send successfully confirmed to Home Assistant, rather than a delivery receipt from a device.
 - The token is stored in the Home Assistant configuration. Forms do not prefill it; the integration does not log tokens or secret webhook URLs. Protect your Home Assistant backups accordingly.
-- Messages are sent exclusively over HTTPS to `https://serverpush.net`. Custom server addresses are not configurable in this version.
+- Messages are sent exclusively over HTTPS to `https://www.serverpush.net`. Custom server addresses are not configurable in this version.
 
 ## Development
 
@@ -99,7 +99,7 @@ Tests use Home Assistant's real config flow, entity registry, and notification i
 
 GitHub Actions also runs HACS validation and Home Assistant hassfest. See [RELEASING.md](RELEASING.md) for publication requirements.
 
-API contract: [ServerPush API documentation](https://serverpush.net/api/docs).
+API contract: [ServerPush API documentation](https://www.serverpush.net/api/docs).
 
 ## License
 

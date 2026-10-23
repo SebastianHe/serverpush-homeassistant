@@ -4,7 +4,7 @@
 
 <img src="custom_components/serverpush/brand/icon.png" alt="ServerPush App-Icon" width="128" height="128">
 
-Sende Benachrichtigungen aus Home Assistant über [ServerPush.net](https://serverpush.net) an deine ServerPush-Chats – beispielsweise bei offenen Fenstern, abgeschlossenen Backups oder Störungen.
+Sende Benachrichtigungen aus Home Assistant über [ServerPush.net](https://www.serverpush.net) an deine ServerPush-Chats – beispielsweise bei offenen Fenstern, abgeschlossenen Backups oder Störungen.
 
 - Vier Notify-Entities pro Webhook-Token: `info`, `success`, `warning` und `error`.
 - Versand aus Automationen und Skripten über die Standardaktion `notify.send_message`, mit optionalem Titel und Markdown im Nachrichtentext.
@@ -81,7 +81,7 @@ Bei einem abgelehnten Token startet Home Assistant einen Dialog zur erneuten Aut
 - POST-Anfragen werden bei Fehlern **nicht automatisch wiederholt**. Nach einem Timeout kann die Nachricht bereits angenommen worden sein; prüfe vor erneutem Versand den Chat.
 - Es gibt kein Polling und keine Warteschlange. Der gespeicherte Entity-Zustand zeigt den letzten von Home Assistant erfolgreich bestätigten Versand, keine Empfangsbestätigung eines Endgeräts.
 - Das Token wird in der Home-Assistant-Konfiguration gespeichert. Formulare zeigen es nicht vorab an; die Integration protokolliert weder Tokens noch geheime Webhook-URLs. Schütze deine Home-Assistant-Backups entsprechend.
-- Der Versand erfolgt ausschließlich per HTTPS an `https://serverpush.net`. Eigene Serveradressen sind in dieser Version nicht konfigurierbar.
+- Der Versand erfolgt ausschließlich per HTTPS an `https://www.serverpush.net`. Eigene Serveradressen sind in dieser Version nicht konfigurierbar.
 
 ## Entwicklung
 
@@ -97,7 +97,7 @@ python3.14 -m venv .venv
 
 Die Tests verwenden Home Assistants echte Config-Flow-, Entity-Registry- und Notify-Infrastruktur. HTTP-Anfragen werden simuliert; echte Tokens und Nachrichten sind für Tests nicht nötig. Sockets sind während der Tests gesperrt.
 
-API-Vertrag: [ServerPush-API-Dokumentation](https://serverpush.net/api/docs).
+API-Vertrag: [ServerPush-API-Dokumentation](https://www.serverpush.net/api/docs).
 
 GitHub Actions führt zusätzlich die HACS-Validierung und Home Assistant hassfest aus. Hinweise zur Veröffentlichung: [RELEASING.md](RELEASING.md).
 

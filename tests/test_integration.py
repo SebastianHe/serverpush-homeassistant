@@ -78,7 +78,7 @@ async def test_default_name_and_multiple_tokens(hass, aioclient_mock):
 
 
 @pytest.mark.parametrize(
-    "token", ["", "   ", "https://serverpush.net/token", "a/b", "a?b"]
+    "token", ["", "   ", "https://www.serverpush.net/token", "a/b", "a?b"]
 )
 async def test_invalid_token_format(hass, token):
     result = await hass.config_entries.flow.async_init(
